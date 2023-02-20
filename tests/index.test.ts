@@ -9,11 +9,9 @@ describe("not replit", () => {
 });
 
 describe("in replit", () => {
-  process.env.CODESPACES = "true";
-
   it("should return true", () => {
+    process.env.CODESPACES = "true";
     equal(isCodespace(), true);
+    delete process.env.CODESPACES;
   });
-
-  delete process.env.CODESPACES;
 });
